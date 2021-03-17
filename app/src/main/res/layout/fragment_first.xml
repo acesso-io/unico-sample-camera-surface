@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".FirstFragment">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_facial_recognition"
+        tools:src="@tools:sample/avatars"
+        tools:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/view_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="70dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/showImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:src="@tools:sample/avatars"
+            tools:visibility="visible"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:id="@+id/result1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/showImageView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="this is my result" />
+
+        <TextView
+            android:id="@+id/result2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/result1"
+            android:text="this is my result" />
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/capture_button"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/circle_opaque"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="33dp">
+
+        <ImageView
+            android:id="@+id/capture_button_secondary_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY"
+            android:background="@drawable/ic_stillshot_camera"
+            tools:ignore="ContentDescription"
+            android:clickable="false"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

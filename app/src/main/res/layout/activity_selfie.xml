@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".camera.activities.SelfieActivity"
+    android:id="@+id/root_view"
+    android:background="@color/colorBlack"
+    android:padding="0dp"
+    android:layout_margin="0dp">
+
+    <com.unico.camerasurface.camera.utils.camera.AutoFitTextureView
+        android:id="@+id/texture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+
+
+
+    <ImageView
+        android:id="@+id/ivPreview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+
+    <View
+        android:id="@+id/lineBottom"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_alignBottom="@+id/texture"
+        android:background="@color/colorOrange" />
+
+    <View
+        android:id="@+id/lineTop"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_alignTop="@+id/texture"
+        android:background="@color/colorOrange" />
+
+    <View
+        android:id="@+id/lineLeft"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorGreen" />
+
+    <View
+        android:id="@+id/lineRight"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:background="@android:color/holo_red_dark"
+        android:gravity="right" />
+
+
+    <View
+        android:id="@+id/bg_popup_reset"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorBlueMask"
+        android:alpha="0.8"
+        android:gravity="right"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/take_picture"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="110dp"
+        android:background="@drawable/circle_opaque">
+
+        <RelativeLayout
+            android:id="@+id/capture_button_secondary_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="1dp"
+            android:background="@drawable/circle_white"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/capture_button_secondary_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"
+                android:background="@drawable/ic_stillshot_camera"
+                tools:ignore="ContentDescription"
+                android:clickable="false"
+                />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/popup_reset_error"
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        android:background="@drawable/dialog_background"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:visibility="gone"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="115dp"
+                android:src="@drawable/ic_popup_light_error"
+                android:layout_marginTop="20dp"/>
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="60dp"
+                android:text="Ops..."
+                android:gravity="center"
+                android:textSize="20sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/colorIntroTitle"/>
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="60dp"
+                android:text="Obedeça as instruções e esteja em um ambiente bem iluminado"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/colorIntroDescription"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentBottom="true">
+
+                    <Button
+                        android:id="@+id/btPopupTryAgain"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/button_background_rounded"
+                        android:text="@string/label_tryagain"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginEnd="40dp"
+                        android:layout_marginBottom="20dp"
+                        android:textSize="16sp"
+                        />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
